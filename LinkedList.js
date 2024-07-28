@@ -186,7 +186,15 @@ class LinkedList{
         let newNode = new Node(value, current);
         previous.setNext(newNode);
     }
+
+    removeAt(index){
+        let previous = this.at(index - 1);
+        let next = this.at(index + 1);
+        previous.setNext(next);
+    }
 }
+
+//Testing Purposes:
 
 const myList = new LinkedList();
 myList.append(2);
@@ -205,5 +213,8 @@ myList.append(6);
 //console.log(myList.contains("Head"));
 //console.log(myList.find(3));
 myList.insertAt("Test", 5);
+console.log(myList.toString());
+
+myList.removeAt(5);
 console.log(myList.toString());
 
