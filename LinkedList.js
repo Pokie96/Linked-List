@@ -174,6 +174,18 @@ class LinkedList{
         string += `null`;
         return string;
     }
+
+    /**
+     * Inserts a new node with the provided value at the given index.
+     * @param {*} value - Value of new node to be inserted
+     * @param {*} index - Index of list for new node to inserted in
+     */
+    insertAt(value, index){
+        let previous = this.at(index - 1);
+        let current = this.at(index);
+        let newNode = new Node(value, current);
+        previous.setNext(newNode);
+    }
 }
 
 const myList = new LinkedList();
@@ -192,4 +204,6 @@ myList.append(6);
 //console.log(myList.at(0));
 //console.log(myList.contains("Head"));
 //console.log(myList.find(3));
+myList.insertAt("Test", 5);
 console.log(myList.toString());
+
