@@ -154,6 +154,26 @@ class LinkedList{
         }
         return null;
     }
+
+    /**
+     * Represents the Linked List objects as Strings to be previewed to console
+     * @returns String representation of the Linked List. Or null if empty
+     */
+    toString(){
+        let i = 0;
+        if(this.head == null){
+            return null;
+        }
+        let current = this.head;
+        let string = "";
+        while(i < this.getSize()){
+            string += `(${current.value}) -> `; 
+            current = current.next;
+            i++;
+        }
+        string += `null`;
+        return string;
+    }
 }
 
 const myList = new LinkedList();
@@ -164,11 +184,12 @@ myList.prepend(1);
 myList.prepend("Head");
 myList.append(5);
 myList.append(6);
-myList.pop();
+
 
 //console.log(myList.getHead());
 //console.log(myList.getTail());
 //console.log(myList.getSize());
 //console.log(myList.at(0));
-console.log(myList.contains("Head"));
-console.log(myList.find(3));
+//console.log(myList.contains("Head"));
+//console.log(myList.find(3));
+console.log(myList.toString());
