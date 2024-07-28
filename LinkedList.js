@@ -86,6 +86,24 @@ class LinkedList{
             return size;
         }
     }
+
+    /**
+     * Returns the node at the given index
+     * @param {*} index - The index of the node to be returned
+     * @returns node at index
+     */
+    at(index){
+        let i = 0;
+        if(this.head == null){
+            return null;
+        }
+        let current = this.head;
+        while(i != index){
+            current = current.next;
+            i++;
+        }
+        return current;
+    }
 }
 
 const myList = new LinkedList();
@@ -97,6 +115,7 @@ myList.prepend("Head");
 myList.append(5);
 myList.append(6);
 
-console.log(myList.getHead());
-console.log(myList.getTail());
-console.log(myList.getSize());
+//console.log(myList.getHead());
+//console.log(myList.getTail());
+//console.log(myList.getSize());
+console.log(myList.at(0));
