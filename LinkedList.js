@@ -113,6 +113,27 @@ class LinkedList{
         let secondLast = this.at(size - 2);
         secondLast.next = null;
     }
+
+    /**
+     * Returns true or false if the Liked List contains the value given in the parameter
+     * @param {*} value - The value to look for in the Linked List 
+     * @returns true if the List contains the value, false otherwise.
+     */
+    contains(value){
+        let i = 0;
+        if(this.head == null){
+            return false;
+        }
+        let current = this.head;
+        while(i < this.getSize()){
+            if(current.value == value){
+                return true;
+            }
+            current = current.next;
+            i++;
+        }
+        return false;
+    }
 }
 
 const myList = new LinkedList();
@@ -129,3 +150,4 @@ myList.pop();
 //console.log(myList.getTail());
 //console.log(myList.getSize());
 console.log(myList.at(0));
+console.log(myList.contains("Head"));
