@@ -104,6 +104,15 @@ class LinkedList{
         }
         return current;
     }
+
+    /**
+     * Removes the last element from the list
+     */
+    pop(){
+        let size = this.getSize();
+        let secondLast = this.at(size - 2);
+        secondLast.next = null;
+    }
 }
 
 const myList = new LinkedList();
@@ -114,6 +123,7 @@ myList.prepend(1);
 myList.prepend("Head");
 myList.append(5);
 myList.append(6);
+myList.pop();
 
 //console.log(myList.getHead());
 //console.log(myList.getTail());
