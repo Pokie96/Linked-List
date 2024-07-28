@@ -134,6 +134,26 @@ class LinkedList{
         }
         return false;
     }
+
+    /**
+     * Returns the index number of the node containing the given value
+     * @param {*} value - The value to find within the Linked List
+     * @returns The index number of the node containing the value or null
+     */
+    find(value){
+        if(this.contains(value)){
+            let i = 0;
+            let current = this.head;
+            while(i < this.getSize()){
+                if(current.value == value){
+                    return i;
+                }
+                current = current.next;
+                i++
+            }
+        }
+        return null;
+    }
 }
 
 const myList = new LinkedList();
@@ -149,5 +169,6 @@ myList.pop();
 //console.log(myList.getHead());
 //console.log(myList.getTail());
 //console.log(myList.getSize());
-console.log(myList.at(0));
+//console.log(myList.at(0));
 console.log(myList.contains("Head"));
+console.log(myList.find(3));
